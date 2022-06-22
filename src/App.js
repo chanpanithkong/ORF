@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <p>
           testing <code>src/App.js</code> and save to reload.
         </p>
-        <h1>Hellow world!</h1>
+        <h1>Hellow world too!</h1>
         <a
           className="App-link"
           href="https://reactjs.org"
