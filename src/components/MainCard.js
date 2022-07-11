@@ -5,6 +5,9 @@ import { forwardRef } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material';
 
+// project import
+import Highlighter from './third-party/Highlighter';
+
 // header style
 const headerSX = {
   p: 2.5,
@@ -29,7 +32,8 @@ const MainCard = forwardRef(
       shadow,
       sx = {},
       title,
-      modal = false,
+      codeHighlight = false,
+      codeString,
       ...others
     },
     ref
@@ -51,18 +55,12 @@ const MainCard = forwardRef(
           ':hover': {
             boxShadow: boxShadow ? shadow || theme.customShadows.z1 : 'inherit'
           },
-          ...(modal && {
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: { xs: `calc( 100% - 50px)`, sm: 'auto' },
-            '& .MuiCardContent-root': {
-              overflowY: 'auto',
-              minHeight: 'auto',
-              maxHeight: `calc(100vh - 200px)`
-            }
-          }),
+          '& pre': {
+            m: 0,
+            p: '12px !important',
+            fontFamily: theme.typography.fontFamily,
+            fontSize: '0.75rem'
+          },
           ...sx
         }}
       >
@@ -76,7 +74,7 @@ const MainCard = forwardRef(
             subheader={subheader}
           />
         )}
-        {darkTitle && title && <CardHeader sx={headerSX} title={<Typography variant="h4">{title}</Typography>} action={secondary} />}
+        {darkTitle && title && <CardHeader sx={headerSX} title={<Typography variant="h3">{title}</Typography>} action={secondary} />}
 
         {/* content & header divider */}
         {title && divider && <Divider />}
@@ -84,6 +82,14 @@ const MainCard = forwardRef(
         {/* card content */}
         {content && <CardContent sx={contentSX}>{children}</CardContent>}
         {!content && children}
+
+        {/* card footer - clipboard & highlighter  */}
+        {codeString && (
+          <>
+            <Divider sx={{ borderStyle: 'dashed' }} />
+            <Highlighter codeString={codeString} codeHighlight={codeHighlight} />
+          </>
+        )}
       </Card>
     );
   }
@@ -104,7 +110,8 @@ MainCard.propTypes = {
   shadow: PropTypes.string,
   sx: PropTypes.object,
   title: PropTypes.oneOfType([PropTypes.node, PropTypes.string, PropTypes.object]),
-  modal: PropTypes.bool
+  codeHighlight: PropTypes.bool,
+  codeString: PropTypes.string
 };
 
 export default MainCard;
