@@ -105,4 +105,4 @@ dist
 .tern-port
 
 # wincompare file
-*.bak
+.bak
