@@ -66,11 +66,12 @@ const RadioGroupForms = (props) => {
 
   return (
     <MainCard>
+      <InputLabel>{props.name}</InputLabel>
       <form>
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid item>
             <FormControl>
-              <FormLabel id="demo-row-radio-buttons-group-label">{props.name}</FormLabel>
+              <FormLabel id="demo-row-radio-buttons-group-label"></FormLabel>
               <RadioGroup
                 row
                 aria-labelledby="demo-row-radio-buttons-group-label"
@@ -82,8 +83,8 @@ const RadioGroupForms = (props) => {
                 <FormControlLabel value="no" control={<Radio />} label="No" />
               </RadioGroup>
               {value == 'yes' && (
-                <Grid item xs={12}>
-                  <Stack spacing={2}>
+                <Grid item>
+                  <Stack spacing>
                     <InputLabel></InputLabel>
                     <TextareaAutosize aria-label="input your answer here" minRows={5} placeholder="answer" style={{ width: '100%' }} />
                   </Stack>
