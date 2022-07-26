@@ -5,6 +5,7 @@ import { Divider, Grid, InputLabel, Stack, TextareaAutosize, CardActions, Button
 // import MainCard from 'components/MainCard';
 import RadioGroupForms from 'sections/forms/validation/RadioGroupForms';
 import DateSelection from 'sections/forms/wizard/basic-wizard/DateSelection';
+import { FormattedMessage } from 'react-intl';
 // import moment from 'moment';
 // assets
 class questionnaire extends Component {
@@ -12,11 +13,15 @@ class questionnaire extends Component {
     return (
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
-          <InputLabel>Profile</InputLabel>
+          <InputLabel>
+            <FormattedMessage id="profile" />
+          </InputLabel>
           <TextareaAutosize aria-label="input your answer here" minRows={2} placeholder="answer" style={{ width: '100%' }} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <InputLabel>reporting month</InputLabel>
+          <InputLabel>
+            <FormattedMessage id="rep-mon" />
+          </InputLabel>
           <DateSelection></DateSelection>
         </Grid>
         <Grid item xs={12} md={12}>

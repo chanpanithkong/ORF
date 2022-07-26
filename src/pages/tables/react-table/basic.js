@@ -15,7 +15,7 @@ const Basic = () => {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12} lg={6}>
+      <Grid item xs={12} lg={6} md={12}>
         <BasicTable title="Basic Table" data={data.slice(0, 10)} />
       </Grid>
       <Grid item xs={12} lg={6}>

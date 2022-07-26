@@ -35,20 +35,20 @@ const icons = {
 
 const submitted = {
   id: 'submitted',
-  title: <FormattedMessage id="Submitted forms" />,
+  title: <FormattedMessage id="submitted-forms" />,
   type: 'group',
   icons: icons.ContainerOutlined,
   children: [
     {
       id: 'orf',
-      title: <FormattedMessage id="Submitted Requests" />,
+      title: <FormattedMessage id="submitted-requests" />,
       type: 'item',
       url: '/sample-page',
       icon: icons.FileDoneOutlined
     },
     {
       id: 'orf2',
-      title: <FormattedMessage id="Submitted Questionnaire" />,
+      title: <FormattedMessage id="submitted-questionnaire" />,
       type: 'item',
       url: '/sample-page',
       icon: icons.CarryOutOutlined

@@ -2,7 +2,16 @@ import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 
 // material-ui
-import { Box, Chip, Stack, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
+import {
+  // Box,
+  Chip,
+  Stack,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow
+} from '@mui/material';
 
 // third-party
 import { useTable, useFilters, useGlobalFilter } from 'react-table';
@@ -13,7 +22,7 @@ import ScrollX from 'components/ScrollX';
 import LinearWithLabel from 'components/@extended/Progress/LinearWithLabel';
 import makeData from 'data/react-table';
 import {
-  GlobalFilter,
+  // GlobalFilter,
   DefaultColumnFilter,
   SelectColumnFilter,
   SliderColumnFilter,
@@ -34,12 +43,12 @@ function ReactTable({ columns, data }) {
     getTableBodyProps,
     headerGroups,
     rows,
-    prepareRow,
-    state,
+    prepareRow
+    // state,
     // @ts-ignore
-    preGlobalFilteredRows,
+    // preGlobalFilteredRows,
     // @ts-ignore
-    setGlobalFilter
+    // setGlobalFilter
   } = useTable(
     {
       columns,
@@ -58,7 +67,7 @@ function ReactTable({ columns, data }) {
 
   return (
     <Stack spacing={2}>
-      <Box sx={{ p: 2, pb: 0 }}>
+      {/*     <Box sx={{ p: 2, pb: 0 }}>
         <GlobalFilter
           preGlobalFilteredRows={preGlobalFilteredRows}
           // @ts-ignore
@@ -66,7 +75,7 @@ function ReactTable({ columns, data }) {
           setGlobalFilter={setGlobalFilter}
         />
       </Box>
-
+  */}
       <Table {...getTableProps()}>
         <TableHead sx={{ borderTopWidth: 2 }}>
           {headerGroups.map((headerGroup, i) => (

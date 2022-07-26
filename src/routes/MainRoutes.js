@@ -9,6 +9,10 @@ import AuthGuard from 'utils/route-guard/AuthGuard';
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
 const Questionnaire = Loadable(lazy(() => import('pages/questionnaire/questionnaire')));
 const Statistics = Loadable(lazy(() => import('pages/dashboard/statistics')));
+const Filtering = Loadable(lazy(() => import('pages/tables/react-table/filtering')));
+const Basic = Loadable(lazy(() => import('pages/tables/react-table/basic')));
+const NewUser = Loadable(lazy(() => import('pages/forms/orf/newUser')));
+const NewAuth = Loadable(lazy(() => import('pages/forms/orf/newAuth')));
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -41,6 +45,32 @@ const MainRoutes = {
             {
               path: 'statistics',
               element: <Statistics />
+            }
+          ]
+        },
+        {
+          path: 'tables',
+          children: [
+            {
+              path: 'react-table',
+              children: [{ path: 'basic', element: <Basic /> }]
+            },
+            {
+              path: 'react-table',
+              children: [{ path: 'filtering', element: <Filtering /> }]
+            }
+          ]
+        },
+        {
+          path: 'orf',
+          children: [
+            {
+              path: 'newUser',
+              element: <NewUser />
+            },
+            {
+              path: 'newAuth',
+              element: <NewAuth />
             }
           ]
         }
