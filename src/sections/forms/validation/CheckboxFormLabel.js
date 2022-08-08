@@ -10,7 +10,7 @@ export default function CheckboxLabels() {
       <form>
         <Grid container>
           <Grid item>
-            <FormControl component="roles">
+            <FormControl title="okay" component="roles">
               <RadioGroup aria-label="gender" defaultValue="female" name="radio-buttons-group" row>
                 <FormControlLabel value="submit" control={<Radio />} label="Submitter" />
                 <FormControlLabel value="auth" control={<Radio />} label="Authorizer" />
