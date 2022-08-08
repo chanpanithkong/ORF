@@ -198,7 +198,7 @@ const request = {
           id: 'orf002',
           title: <FormattedMessage id="del-acc" />,
           type: 'item',
-          url: '/samplepage'
+          url: '/orf/deleteUser'
         },
         {
           id: 'orf003',
@@ -210,7 +210,7 @@ const request = {
           id: 'orf004',
           title: <FormattedMessage id="chg-pwd" />,
           type: 'item',
-          url: '/sample-page'
+          url: '/orf/changePassword'
         }
       ]
     },

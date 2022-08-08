@@ -13,6 +13,8 @@ const Filtering = Loadable(lazy(() => import('pages/tables/react-table/filtering
 const Basic = Loadable(lazy(() => import('pages/tables/react-table/basic')));
 const NewUser = Loadable(lazy(() => import('pages/forms/orf/newUser')));
 const NewAuth = Loadable(lazy(() => import('pages/forms/orf/newAuth')));
+const DelUser = Loadable(lazy(() => import('pages/forms/orf/deleteUser')));
+const ChgPwd = Loadable(lazy(() => import('pages/forms/orf/changePassword')));
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -27,7 +29,7 @@ const MainRoutes = {
       ),
       children: [
         {
-          path: 'sample-page',  
+          path: 'sample-page',
           element: <SamplePage />
         },
         {
@@ -69,8 +71,16 @@ const MainRoutes = {
               element: <NewUser />
             },
             {
+              path: 'deleteUser',
+              element: <DelUser />
+            },
+            {
               path: 'newAuth',
               element: <NewAuth />
+            },
+            {
+              path: 'changePassword',
+              element: <ChgPwd />
             }
           ]
         }
